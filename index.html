@@ -16,6 +16,28 @@
   <link rel="apple-touch-icon" href="images/Favicon.png">
   <!-- 스타일 -->
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .hero-visual__orb {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: hero-orb-float 4s ease-in-out infinite;
+    }
+    .hero-visual__orb:nth-of-type(2) { animation-delay: -0.7s; }
+    .hero-visual__orb:nth-of-type(3) { animation-delay: -1.4s; }
+    .hero-visual__orb:nth-of-type(4) { animation-delay: -2.1s; }
+    .hero-visual__orb--large { animation-name: hero-orb-float-large; }
+    @keyframes hero-orb-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-7px); }
+    }
+    @keyframes hero-orb-float-large {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-visual__orb { animation: none; }
+    }
+  </style>
 </head>
 <body>
 
@@ -123,9 +145,9 @@
               </defs>
 
               <!-- 구체 -->
-              <circle cx="995" cy="318" r="47" fill="url(#hv-sphere)" />
-              <circle cx="1328" cy="175" r="17" fill="url(#hv-sphere)" />
-              <circle cx="1688" cy="215" r="60" fill="url(#hv-sphere)" />
+              <g class="hero-visual__orb"><circle cx="995" cy="318" r="47" fill="url(#hv-sphere)" /></g>
+              <g class="hero-visual__orb"><circle cx="1328" cy="175" r="17" fill="url(#hv-sphere)" /></g>
+              <g class="hero-visual__orb hero-visual__orb--large"><circle cx="1688" cy="215" r="60" fill="url(#hv-sphere)" /></g>
 
               <!-- 노트북 받침 -->
               <path d="M965 514H1600L1572 548H993Z" fill="url(#hv-base)" filter="url(#hv-shadow)" />
@@ -167,7 +189,7 @@
               <rect x="1537" y="592" width="128" height="40" rx="14" fill="#0A6FD6" />
 
               <!-- 앞쪽 구체 -->
-              <circle cx="1418" cy="593" r="46" fill="url(#hv-sphere)" />
+              <g class="hero-visual__orb"><circle cx="1418" cy="593" r="46" fill="url(#hv-sphere)" /></g>
             </svg>
           </div>
         </div>
@@ -372,7 +394,7 @@
                     <span class="pf-card__chip">Promotion</span>
                     <div class="pf-card__body">
                       <h3 class="pf-card__title">크리스마스 프로모션</h3>
-                      <p class="pf-card__desc">시즌 한정 케익 비주얼 &amp; 배너 디자인</p>
+                      <p class="pf-card__desc">시즌 한정 케이크 비주얼 &amp; 배너 디자인</p>
                     </div>
                   </article>
 
